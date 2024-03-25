@@ -1,0 +1,33 @@
+
+#toDoList {
+  font-family: "Noto Sans TC";
+}
+.screen {
+  font-family: "Noto Sans TC";
+}
+.screen h3 {
+  font-size: 20px;
+}
+.screen pre {
+  font-family: "Noto Sans TC";
+  line-height: 2;
+  font-size: 13px;
+}
+.screen ul {
+  font-family: "Noto Sans TC";
+  line-height: 1.8;
+  font-size: 12px;
+}
+
+.mail {
+    font-family: "Noto Sans TC";
+    text-decoration: none;
+    color: inherit;
+}
+.rightScreen label {
+    font-family: "Noto Sans TC";
+    font-size: 10px;
+}
+.copyRight {
+  color: lightgray;
+}

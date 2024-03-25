@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('../assets/font/NotoSansTC-Medium.ttf');
+}
+@font-face {
+    font-family: 'NotJamOldStyle';
+    src: url('../assets/font/NotJamOldStyle11.ttf');
+  }
+body {
+  text-rendering: pixelated;
+  font-family: 'NotJamOldStyle';
+}
+.header {
+  font-family: 'NotJamOldStyle';
+}

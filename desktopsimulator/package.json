@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rollup": "^4.13.0",
+    "rollup-plugin-css-only": "^4.5.2"
+  }
+}
