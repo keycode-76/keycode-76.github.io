@@ -1,0 +1,10 @@
+#behindTheScenes {
+    margin: 1em;
+    padding: 2em;
+    background-color: lightgray;
+    text-align: center;
+}
+
+#behindTheScenes img{
+    width: 500px;
+}

@@ -1,0 +1,36 @@
+
+.userInput {
+  font-family: "Noto Sans TC";
+}
+.title {
+  font-family: "Noto Sans TC";
+  font-size: 1em;
+}
+.content {
+  font-family: "Noto Sans TC";
+}
+.userSelect {
+  font-family: "Noto Sans TC";
+}
+button {
+  font-family: "Noto Sans TC";
+}
+.notes {
+  font-family: "Noto Sans TC";
+}
+.note {
+  font-size: 1em; 
+}
+.notes button {
+  font-family: "Noto Sans TC";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10px;  
+}
+.notes button:hover{
+  color:white;
+}
+.notes label {
+  color: tomato;
+  font-size: 10px;
+}

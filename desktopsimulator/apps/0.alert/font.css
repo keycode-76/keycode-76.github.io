@@ -1,0 +1,11 @@
+
+.alertScreen h3 {
+    font-family: 'NotJamOldStyle';
+  }
+  .alertScreen pre {
+    font-family: "Noto Sans TC";
+    font-size: 13px;
+  }
+  .alertScreen button {
+    font-family: "Noto Sans TC";
+  }
