@@ -10,8 +10,11 @@
    font-family: '03';
    src: url('/assets/RobotoMono-SemiBold.ttf');
  }
+html {
+   cursor: url("icon1.png"), auto;
+}
  body {
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     padding: 5em;
     display: flex;
     justify-content: center;
@@ -19,11 +22,12 @@
     * {
       display: flex;
       box-sizing: border-box;
+      justify-content: center;
+      align-items: center;
     }
  }
  #container {
-   /* width: 100%; */
-   background-color: rgb(27, 0, 149);
+   background: linear-gradient(to bottom, rgb(0, 0, 0),rgb(0, 0, 0), rgb(0, 0, 255)); /* 渐变从深蓝色到浅蓝色 */
    flex-direction: column;
    letter-spacing: 5px;
    align-items: start;
@@ -37,9 +41,8 @@
     filter: blur(5px);
  }
  #container h2 {
-   background-color: rgb(21, 21, 21);
-   justify-content: center;
-   align-items: center;
+   display: block;
+   background-color: black;
    font-family: '03';
    color: red;
 }
@@ -54,80 +57,88 @@
    background-color: rgb(237, 154, 0);
    border: 5px solid black;
 
-   /* border-radius: 30px; */
    letter-spacing: 3px;
    font-family: '01';
    color: rgb(27, 0, 149);
    justify-content: center;
-   
+   cursor: url("icon2.png"), text;
 }
 
- @media screen and (min-width: 768px){ 
-   #container {
-      height: 350px;
-      width: 700px;
-      /* padding: 10px 20px; */
-      letter-spacing: 5px;
-      font-size: 30px;
+@media screen and (min-width: 501px){ 
+#shadowDiv {
+   width: 100%;
+   height: 50px;
+   filter:blur(10px)
    }
-   #shadowDiv {
-      width: 100%;
-      height: 30px;
-    }
-    #container h2 {
-      width: 100%;
-      height: 60px;
-      /* margin-bottom: 10px; */
-      font-size: 55px;
-   }
-   #container p {
-      /* margin-top: -30px; */
-      margin: 20px auto;
-      margin-top: -40px;
-      /* margin-left: 20px; */
-      font-size: 25px;
-   }
-   #container a {
-      width: 200px;
-      margin-top: 40px;
-      margin-left: -3px;
-      padding: 10px;
-      font-size: 30px;
-   }
-  }
+#container {
+   background: 
+   linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 255)); /* 渐变从深蓝色到浅蓝色 */
 
-  @media screen and (max-width:768px){ /*  mobile */
-   #container {
-      /* padding: 20px; */
+   width: 700px;
+   height: 600px;
+   letter-spacing: 5px;
+   font-size: 30px;
+   align-items: center;
+   text-align: center;
+}
+#gif {
+   width: 500px;
+ }
+#container h2 {
+   width: 100%;
+   height: 60px;
+   margin-top: -20px;
+   align-items: center;
+   font-size: 50px;
+}
+#container p {
+   margin: 20px auto;
+   margin-top: -40px;
+   font-size: 25px;
+}
+#container a {
+   width: 200px;
+   margin: 0px 10px;
+   margin-top: 80px;
+   padding: 10px;
+   font-size: 25px;
+}
+}
 
-      width: 230px;
-      height: 300px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+@media screen and (max-width:500px){ /*  mobile */
+#container {
+   width: 320px;
+   height: 600px;
+   flex-direction: column;
+   justify-content: start;
+   align-items: center;
+}
+#gif {
+   width: 320px;
    }
-   #shadowDiv {
-      width: 100%;
-      height: 25px;
-    }
-    #container h2 {
-      /* width: 280px; */
-      height: 50px;
-      margin: 0px;
-      font-size: 30px;
+#shadowDiv {
+   width: 100%;
+   height: 30px;
    }
-   #container p {
-      margin-top: 10px;
-      font-size: 20px;
-   }
-   #workBox {
-      flex-direction: column;
-   }
-   #container a {
-      width: 200px;
-      margin-top: -5px;
-      font-size: 20px;
-   }
+   #container h2 {
+   width: 100%;
+   height: 50px;
+   margin: 0px;
+   font-size: 40px;
+   text-align: center;
+}
+#container p {
+   margin-top: 10px;
+   font-size: 20px;
+}
+#workBox {
+   flex-direction: column;
+}
+#container a {
+   width: 200px;
+   margin-top: -5px;
+   font-size: 20px;
+}
 }
 #container a:hover {
    border: 5px solid black;
