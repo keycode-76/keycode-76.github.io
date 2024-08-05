@@ -1,8 +1,9 @@
-// vite.config.mjs
+// vite.config.js
 import { defineConfig } from 'vite';
 import commonjs from 'vite-plugin-commonjs';
 
 export default defineConfig({
+  base: '', 
   // 防止 Vite 在編譯時清空螢幕，這樣你就可以看到 Rust 的錯誤訊息
   clearScreen: false,
 
@@ -20,17 +21,6 @@ export default defineConfig({
   ],
 
   build: {
-    
-cssPreprocessOptions: {
-      // 如果要使用SASS全域變數就在這裡設定路徑
-      scss: {
-       // additionalData: '@import "./styles/variable.scss";',
-      },
-     },
-     css: {
-      // 官方列為實驗性功能，可以找出是由哪個來源建構的css
-      devSourceMap: true,
-     },
     // 根據 Tauri 的平台選擇使用特定的瀏覽器引擎。Tauri 在 Windows 上使用 Chromium，而在 macOS 和 Linux 上使用 WebKit。
     target: process.env.TAURI_PLATFORM == 'windows' ? 'chrome105' : 'safari13',
 
