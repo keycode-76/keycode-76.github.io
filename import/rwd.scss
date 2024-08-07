@@ -1,105 +1,182 @@
-@font-face {
-    font-family: '01';
-    src: url('/assets/monogram-extended-italic.ttf');
-}
-@font-face {
-    font-family: '02';
-    src: url('/assets/monogram-extended.ttf');
-}
-@font-face {
-    font-family: '03';
-    src: url('/assets/RobotoMono-SemiBold.ttf');
-}
-
-@media screen and (min-width: 581px){ 
-#shadowDiv {
-   width: 100%;
-   height: 50px;
-   filter:blur(10px)
-   }
-#container {
-   // background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 0), rgb(0, 0, 255));
-   width: 700px;
-   height: 600px;
-   letter-spacing: 5px;
-   font-size: 30px;
-   align-items: center;
-   text-align: center;
-}
-#workBox {
-   // border: 3px solid black;
-   a{
-      all: unset;
-      width: 150px;
-      height: 150px;
-      padding: 10px;
-      margin: 10px;
-      background-color: rgb(237, 154, 0);
-      border: 1px solid black;
-
-      // letter-spacing: 2px;
-      font-family: '01';
-      font-size: 20px;
-      // // color: rgb(27, 0, 149);
-      // justify-content: center;
-      // cursor: url("icon2.png"), text;
-   }
-}
-}
-
-@media screen and (max-width:580px){ /*  mobile */
-#container {
-//    width: 320px;
-//    height: 100%;
-   flex-direction: column;
-   justify-content: start;
-   align-items: center;
-   * {
-    display: flex;
-    justify-content: center;
-   }
-}
-#album {
-    width: 90vw;
-    height: 10vw;
-    #gif {
-        top:0;
+// rwd.scss
+@import "import/style.scss";
+/*手機 */
+@media only screen and (max-width: 580px) {
+    #wrap {
+        min-width: 100%;
+        background: white;
+    }
+    #header {
+        transition: all 0.8s ease;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+        background-color: black;
+        position: fixed;
+        top: 0;
         width: 100%;
-        height: 100%;
-       // width: 100px;
-       // height: 50px;
+        height: 60px;
+        display: flex; /* 使用 flex 布局 */
+        align-items: center;
+        font-size: 25px;
+    }
+    #header {
+        .logo {
+            width: 80px;
+            height: 33px;
+        }
+        .mobile-menu {
+            // display: none;
+            position: absolute;
+            width: 30px;
+            height: 25px;
+            margin: 0;
+            margin-top: 1px;
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+            transition: 0.5s ease-in-out;
+            // z-index: 99;
+            top: 50%;
+            right: 30px;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            // background-color: white;
+        }
+        .mobile-menu span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: #fff;
+            border-radius: 10px;
+            // left: 0;
+            -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+            transition: 0.25s ease-in-out;
+            &:nth-child(1) { top:0px; }
+            &:nth-child(2) { top:10px; }
+            &:nth-child(3) { top:20px; }
+        }
+        .mobile-menu.open span {
+            &:nth-child(1) { 
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+                top: 10px;
+                left: 4px;
+            }
+            &:nth-child(2) { 
+                opacity: 0;
+                width: 0%;
+            }
+            &:nth-child(3) { 
+                -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                top: 10px;
+                left: 4px;
+            }
+        }
+        .menu {
+            li {display: none;}
+        }
+    }    
+    #banner {
+        top:58px;
+        .slider {
+            // min-width: 1240px;
+            // width: 100vw;
+            // height: 20vw;
+            width: 300vw;
+            height: calc(300vw/(3*1.6)); //應該要是300px 但是會有誤差 照片提供1280*768剛好
+            display: flex;
+            overflow: hidden;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            img {
+               width: 100vw;
+            }
+        }
+    }
+    #banner_bottom {
+        padding-top: 5px;
+        #previous,#next {
+            display: none;
+        }
+    }
+    .card_list {
+        grid-template-columns: repeat(2, 150px);
+        background: linear-gradient(to bottom, $color3 , #3251ff,#04012c, #070052);
+    }    
+    #banner_about {
+        width: 100vw;
+        height: calc(300vw/(3*1.6));
+        margin-top: 60px !important;
+        img {
+            width: 100%;
+            height: 100%;
+        }
     }
 }
-#workBox {
-    flex-direction: column;
-    display: grid;
-    grid-template-columns: repeat(2, 150px);
-    gap: 20px;
-    border: 3px solid black;
-    width: 100%;
-    height: 100%;
-    // grid-template-rows: repeat(4, auto);
-    a {
-    all: unset;
-    // width: 100%;
-    height: 150px;
-    padding: 10px;
-    // margin: 10px;
-    // background-color: rgb(237, 154, 0);
-    border: 1px solid black;
-    box-sizing: border-box;
-
-    // letter-spacing: 2px;
-    font-family: '01';
-    font-size: 20px;
+/*平板*/
+@media only screen and (min-width: 581px) and (max-width: 720px) {
+}
+/* 大桌面 */
+@media only screen and (min-width: 721px) {
+    #wrap {
+        min-width: $width_max;
+    }
+    #header {
+        position: relative;
+        .logo {
+            width: 128px;
+            height: 52px;
+        }
+    }
+    #banner {
+        top: -2px;
+        background-color: black;
+        .slider {
+            width: $width_max;
+            height: calc($width_max/(3*1.6)); //應該要是300px 但是會有誤差 照片提供1280*768剛好
+            img {
+               width: calc($width_max/3);
+            }
+        }
+        img {
+            height: 100%;
+            // object-fit: contain;
+            opacity: 0.4;
+            transition: all .3s;
+            filter: blur(2px);
+          }
+          img.active {
+            filter: blur(0px);
+            opacity: 1;
+          }
+    }
+    #banner_bottom {
+        padding-top: 5px;
+        #previous,
+        #next {
+        cursor: url("/assets/ui/icon2.png"), pointer;
+            width: 30px;
+            height: 30px;
+            margin: 0px 20px;
+            border: 2px black solid;
+            background-color: $color4;
+            // top: calc(50% - 25px);
+            color: black;
+        }
+    }
+    .card_list {
+        grid-template-columns: repeat(4, 150px);
+        background: linear-gradient(to bottom, $color4 , #3251ff,#04012c);
+    }    
+    #banner_about {
+        width: 100%;
+        height: 400px;
+        img {
+            top: 100%;
+            left: 50%;
+            min-width: $width_max;
+            height: 90vw;
+        }
     }
 }
-}
-#container a:hover {
-   border: 5px solid black;
-   scale: 1.1;
-   color: black;
-   background-color: red;
-   transition: all .2s ;
-}
-  
